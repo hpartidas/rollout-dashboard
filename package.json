@@ -2,6 +2,22 @@
   "name": "rollout-dashboard",
   "version": "0.1.0",
   "private": true,
+  "description": "Generic Dashboard to control Rollout Flags over APIs",
+  "author": "Hector Partidas <me@hpartidas.guru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hpartidas/rollout-dashboard/issues"
+  },
+  "homepage": "https://github.com/hpartidas/rollout-dashboard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpartidas/rollout-dashboard.git"
+  },
+  "keywords": [
+    "rollout",
+    "cloudbees",
+    "react"
+  ],
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

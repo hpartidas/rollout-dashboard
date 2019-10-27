@@ -66,3 +66,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Troubleshooting
+### Running on WSL
+It is known that running create-react-app under WSL triggers an ENOENT fault that halts execution.
+
+The issue can be fixed by adding Window's System32 folder to the path in WSL.
+
+`export PATH=$PATH:/c/Windows/System32`
+
+More on this issue here: [https://github.com/facebook/create-react-app/issues/7251]
