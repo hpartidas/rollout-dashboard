@@ -1,3 +1,23 @@
+## Description
+This project implements a custom interface for CloudBee's [RollOut](https://rollout.io). 
+
+## Infrastructure as Code
+### Deploying
+To deploy the infrastructure, replace the HOSTING_DOMAIN and BUCKET_NAME placeholders with the values you'll use.
+
+Then to create the stack run the following command:
+1. `aws cloudformation create-stack --template-body file://infrastructure.yaml --stack-name rollout-dashboard-frontend --capabilities CAPABILITY_IAM --parameters ParameterKey=SPADomain,ParameterValue=[HOSTING_DOMAIN] ParameterKey=S3BucketName,ParameterValue=[BUCKET_NAME]`
+
+## Troubleshooting
+### Running on WSL
+It is known that running create-react-app under WSL triggers an ENOENT fault that halts execution.
+
+The issue can be fixed by adding Window's System32 folder to the path in WSL.
+
+`export PATH=$PATH:/c/Windows/System32`
+
+More on this issue here: [https://github.com/facebook/create-react-app/issues/7251]
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,13 +86,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-## Troubleshooting
-### Running on WSL
-It is known that running create-react-app under WSL triggers an ENOENT fault that halts execution.
-
-The issue can be fixed by adding Window's System32 folder to the path in WSL.
-
-`export PATH=$PATH:/c/Windows/System32`
-
-More on this issue here: [https://github.com/facebook/create-react-app/issues/7251]
