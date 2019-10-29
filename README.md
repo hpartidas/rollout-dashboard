@@ -3,10 +3,10 @@ This project implements a custom interface for CloudBee's [RollOut](https://roll
 
 ## Infrastructure as Code
 ### Deploying
-To deploy the infrastructure, replace the HOSTING_DOMAIN and BUCKET_NAME placeholders with the values you'll use.
+To deploy the infrastructure, replace the HOSTING_DOMAIN, BUCKET_NAME, and CERTIFICATE_ARN placeholders with the values you'll use.
 
 Then to create the stack run the following command:
-1. `aws cloudformation create-stack --template-body file://infrastructure.yaml --stack-name rollout-dashboard-frontend --capabilities CAPABILITY_IAM --parameters ParameterKey=SPADomain,ParameterValue=[HOSTING_DOMAIN] ParameterKey=S3BucketName,ParameterValue=[BUCKET_NAME]`
+1. `aws cloudformation create-stack --template-body file://infrastructure.yaml --stack-name rollout-dashboard-frontend --capabilities CAPABILITY_IAM --parameters ParameterKey=SPADomain,ParameterValue=[HOSTING_DOMAIN] ParameterKey=S3BucketName,ParameterValue=[BUCKET_NAME] ParameterKey=DomainCertificate,ParameterValue=[CERTIFICATE_ARN]`
 
 ## Troubleshooting
 ### Running on WSL
@@ -17,6 +17,8 @@ The issue can be fixed by adding Window's System32 folder to the path in WSL.
 `export PATH=$PATH:/c/Windows/System32`
 
 More on this issue here: [https://github.com/facebook/create-react-app/issues/7251]
+
+## CreateReactApp
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
